@@ -16,7 +16,7 @@ model_path = targs.model_path  # models/RRDB_ESRGAN_x4.pth OR models/RRDB_PSNR_x
 device = torch.device('cuda')  # if you want to run on CPU, change 'cuda' -> cpu
 # device = torch.device('cpu')
 
-test_img_folder = targs.testset_path
+test_img_folder = targs.testset_path + "/*"
 
 model = arch.RRDBNet(3, 3, 64, 23, gc=32)
 model.load_state_dict(torch.load(model_path), strict=True)
